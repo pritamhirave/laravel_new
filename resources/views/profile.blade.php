@@ -1,4 +1,4 @@
 <h1>Profile Page</h1>
 <h2>Hello,{{session('user')}}</h2>
 
-<a href="/logout">Logi1n</a>
+<a href="/login">Logi1n</a>
