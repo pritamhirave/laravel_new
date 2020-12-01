@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuth;
+use App\Http\Controllers\UploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +19,14 @@ Route::get('/', function () {
 });
 
 Route::view("upload",'upload');
-Route::get("user",[UserAuth::class,'userLogin']);
-//Route::view("login",'login');
-Route::view("profile",'profile');
+Route::post("upload",[UploadController::class,'index']);
 
-Route::get('/login', function () {
-    if(session()->has('user'))
+//Route::get("user",[UserAuth::class,'userLogin']);
+//Route::view("login",'login');
+//Route::view("profile",'profile');
+
+/*Route::get('/login', function () {
+  if(session()->has('user'))
     {
         return redirect('profile');
     }
@@ -37,3 +40,4 @@ Route::get('/logout', function () {
     }
     return redirect('login');
 });
+*/

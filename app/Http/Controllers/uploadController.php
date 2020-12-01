@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class uploadController extends Controller
 {
     //
-    function index()
+    function index(Request $req)
     {
-        return "Hello from controller";
+        return $req-file('file')->store('docs');
     }
 }
