@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view("upload",'upload');
 Route::get("user",[UserAuth::class,'userLogin']);
 //Route::view("login",'login');
 Route::view("profile",'profile');
