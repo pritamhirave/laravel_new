@@ -20,10 +20,11 @@ Route::get('/', function () {
 
 Route::view("upload",'upload');
 Route::post("upload",[UploadController::class,'index']);
+Route::view("profile",'profile');
 
 //Route::get("user",[UserAuth::class,'userLogin']);
 //Route::view("login",'login');
-//Route::view("profile",'profile');
+
 
 /*Route::get('/login', function () {
   if(session()->has('user'))
