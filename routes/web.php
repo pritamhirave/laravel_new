@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post("users",[UserController::class,'getData']);
+Route::view("login",'users');
 Route::get('/profile/{lang}', function ($lang) {
     App::setlocale($lang);
     return view('profile');
@@ -25,7 +28,7 @@ Route::get('/profile/{lang}', function ($lang) {
 
 Route::view("upload",'upload');
 Route::post("upload",[UploadController::class,'index']);
-//Route::view("profile",'profile');
+
 
 //Route::get("user",[UserAuth::class,'userLogin']);
 //Route::view("login",'login');
